@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Hamza Hussein — Full Stack Developer</title>
+<title>Hamza Hussein — Mobile & Web Developer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Boogaloo&family=Rubik:ital,wght@0,300;0,400;0,500;0,700;0,900;1,400&family=Cairo:wght@300;400;500;600;700;900&family=Cairo+Play:wght@700;900&display=swap" rel="stylesheet"/>
@@ -38,7 +38,7 @@
     font-weight: 900;
     letter-spacing: 0;
   }
-  body[dir="rtl"] .hero-name { font-size: clamp(56px, 10vw, 110px); line-height: 1.05; }
+  body[dir="rtl"] .hero-name { font-size: clamp(48px, 9vw, 95px); line-height: 1.05; }
   body[dir="rtl"] .section-title { font-size: clamp(32px, 5vw, 54px); }
   body[dir="rtl"] nav a { font-family: 'Cairo', sans-serif; letter-spacing: 0; }
   body[dir="rtl"] .lang-toggle { font-family: 'Cairo', sans-serif; }
@@ -63,7 +63,6 @@
     font-family: var(--font-body);
     overflow-x: hidden;
   }
-
 
   /* Scrollbar */
   ::-webkit-scrollbar { width: 4px; }
@@ -121,6 +120,7 @@
     font-weight: 600;
     letter-spacing: 0.1em;
     transition: all 0.2s;
+    cursor: pointer;
   }
   .lang-toggle:hover { background: var(--lime); color: var(--dark); border-color: var(--lime); }
 
@@ -159,16 +159,15 @@
   .hero-content {
     position: relative;
     z-index: 2;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 60px;
-    max-width: 1100px;
+    text-align: center;
+    max-width: 800px;
     width: 90%;
-    padding: 120px 0 60px;
+    padding: 140px 0 60px;
+    margin: 0 auto;
   }
-
-  .hero-left { }
 
   .hero-badge {
     display: inline-flex;
@@ -185,38 +184,37 @@
     text-transform: uppercase;
     margin-bottom: 24px;
   }
-  .hero-badge i { font-size: 10px; }
 
   .hero-name {
     font-family: var(--font-display);
-    font-size: clamp(72px, 12vw, 130px);
+    font-size: clamp(64px, 11vw, 120px);
     line-height: 0.9;
     color: var(--white);
     letter-spacing: -2px;
-    margin-bottom: 8px;
+    margin-bottom: 12px;
   }
   .hero-name span { color: var(--lime); }
 
   .hero-title {
     font-family: var(--font-body);
-    font-size: clamp(14px, 2vw, 18px);
+    font-size: clamp(15px, 2.2vw, 19px);
     color: var(--gray);
-    font-weight: 300;
-    letter-spacing: 0.1em;
+    font-weight: 400;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
-    margin-bottom: 28px;
+    margin-bottom: 24px;
   }
 
   .hero-desc {
     font-size: 15px;
     color: var(--gray2);
     line-height: 1.8;
-    max-width: 420px;
-    margin-bottom: 40px;
+    max-width: 560px;
+    margin-bottom: 36px;
     font-weight: 300;
   }
 
-  .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+  .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; margin-bottom: 50px; }
 
   .btn-primary {
     display: inline-flex;
@@ -256,87 +254,29 @@
   }
   .btn-secondary:hover { border-color: var(--lime); color: var(--lime); }
 
-  .hero-right {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-bottom: 40px;
-    padding-left: 30px;
-  }
-
-  .hero-img-wrap {
-    position: relative;
-    width: 340px; height: 420px;
-  }
-  .hero-img-wrap::before {
-    content: '';
-    position: absolute;
-    inset: -2px;
-    background: linear-gradient(135deg, var(--lime), transparent 60%);
-    border-radius: 20px;
-    z-index: 0;
-  }
-  .hero-img-placeholder {
-    position: relative;
-    z-index: 1;
-    width: 100%; height: 100%;
-    background: var(--card);
-    border-radius: 18px;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 12px;
-    border: 1px solid var(--border);
-  }
-  .hero-img-placeholder img {
-    width: 100%; height: 100%;
-    object-fit: cover;
-    border-radius: 18px;
-  }
-  .hero-img-placeholder .placeholder-inner {
-    text-align: center;
-    color: var(--gray2);
-  }
-  .hero-img-placeholder .placeholder-inner i {
-    font-size: 48px;
-    color: var(--border);
-    display: block;
-    margin-bottom: 8px;
-  }
-  .hero-img-placeholder .placeholder-inner p {
-    font-size: 13px;
-    font-style: italic;
-  }
-
   .hero-stats {
-    position: absolute;
-    bottom: -20px;
-    left: -30px;
     background: var(--card);
     border: 1px solid var(--border);
     border-radius: 16px;
-    padding: 16px 20px;
+    padding: 18px 32px;
     display: flex;
-    gap: 20px;
+    gap: 36px;
     backdrop-filter: blur(10px);
   }
   .stat { text-align: center; }
   .stat-num { font-family: var(--font-display); font-size: 26px; color: var(--lime); }
-  .stat-label { font-size: 10px; color: var(--gray2); text-transform: uppercase; letter-spacing: 0.08em; }
+  .stat-label { font-size: 11px; color: var(--gray2); text-transform: uppercase; letter-spacing: 0.08em; }
 
   /* SCROLL INDICATOR */
   .scroll-indicator {
     position: absolute;
-    bottom: 30px;
+    bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
     color: var(--gray2);
     font-size: 11px;
     letter-spacing: 0.1em;
@@ -359,58 +299,12 @@
   }
 
   .about-inner {
-    max-width: 1100px;
+    max-width: 800px;
     width: 90%;
-    display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    gap: 80px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-  }
-
-  .about-img-wrap {
-    position: relative;
-  }
-  .about-img-frame {
-    width: 100%;
-    aspect-ratio: 3/4;
-    max-width: 360px;
-    background: var(--card);
-    border-radius: 20px;
-    overflow: hidden;
-    border: 1px solid var(--border);
-    position: relative;
-    filter: grayscale(1) contrast(1.1);
-  }
-  .about-img-frame img {
-    width: 100%; height: 100%;
-    object-fit: cover;
-  }
-  .about-img-frame .placeholder-inner {
-    position: absolute; inset: 0;
-    display: flex; flex-direction: column;
-    align-items: center; justify-content: center;
-    gap: 10px; color: var(--gray2);
-  }
-  .about-img-frame .placeholder-inner i { font-size: 40px; color: var(--border); }
-  .about-img-frame .placeholder-inner p { font-size: 13px; font-style: italic; }
-
-  .about-accent {
-    position: absolute;
-    top: -16px; right: -16px;
-    width: 80px; height: 80px;
-    background: var(--lime);
-    border-radius: 50%;
-    opacity: 0.08;
-    filter: blur(30px);
-  }
-  .about-dots {
-    position: absolute;
-    bottom: -20px; left: -20px;
-    width: 100px; height: 100px;
-    background-image: radial-gradient(circle, var(--border) 1px, transparent 1px);
-    background-size: 12px 12px;
-    border-radius: 8px;
-    z-index: -1;
   }
 
   .section-tag {
@@ -424,9 +318,9 @@
     font-weight: 600;
     margin-bottom: 16px;
   }
-  .section-tag::before {
+  .section-tag::before, .section-tag::after {
     content: '';
-    width: 20px; height: 2px;
+    width: 16px; height: 2px;
     background: var(--lime);
     border-radius: 1px;
   }
@@ -446,15 +340,16 @@
     line-height: 1.9;
     margin-bottom: 32px;
     font-weight: 300;
+    max-width: 650px;
   }
 
-  .about-info { display: flex; flex-direction: column; gap: 10px; margin-bottom: 36px; }
-  .info-row { display: flex; align-items: center; gap: 12px; font-size: 14px; }
-  .info-row i { color: var(--lime); width: 18px; font-size: 13px; }
+  .about-info { display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; margin-bottom: 36px; }
+  .info-row { display: flex; align-items: center; gap: 8px; font-size: 14px; }
+  .info-row svg { color: var(--lime); }
   .info-row span { color: var(--gray2); }
   .info-row strong { color: var(--white); font-weight: 500; }
 
-  .about-stats { display: flex; gap: 24px; }
+  .about-stats { display: flex; gap: 20px; width: 100%; max-width: 600px; justify-content: center; }
   .astat {
     background: var(--card);
     border: 1px solid var(--border);
@@ -465,7 +360,7 @@
     transition: border-color 0.3s;
   }
   .astat:hover { border-color: var(--lime); }
-  .astat-num { font-family: var(--font-display); font-size: 32px; color: var(--lime); }
+  .astat-num { font-family: var(--font-display); font-size: 30px; color: var(--lime); }
   .astat-label { font-size: 11px; color: var(--gray2); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 2px; }
 
   /* SKILLS */
@@ -504,8 +399,7 @@
   }
   .skill-card:hover { border-color: var(--lime); transform: translateY(-4px); }
   .skill-card:hover::before { height: 100%; }
-  .skill-card i { font-size: 32px; margin-bottom: 10px; display: block; }
-  .skill-name { font-size: 12px; color: var(--gray); font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; }
+  .skill-name { font-size: 12px; color: var(--gray); font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; margin-top: 8px;}
 
   .skill-bar {
     width: 100%; height: 3px;
@@ -531,7 +425,6 @@
   .projects-inner { max-width: 1100px; width: 90%; }
   .projects-header { text-align: center; margin-bottom: 60px; }
 
-  /* PROJECTS SLIDER */
   .projects-slider-wrap {
     position: relative;
     width: 100%;
@@ -550,9 +443,6 @@
     width: 100%;
     max-width: 700px;
     margin: 0 auto;
-  }
-
-  .project-card {
     background: var(--card);
     border: 1px solid var(--border);
     border-radius: 20px;
@@ -593,7 +483,7 @@
   .project-empty .empty-title {
     font-family: var(--font-display);
     font-size: 18px;
-    color: var(--gray);
+    color: var(--lime);
     letter-spacing: 1px;
   }
   .project-empty .empty-sub {
@@ -602,7 +492,7 @@
     text-align: center;
     line-height: 1.6;
     font-style: italic;
-    max-width: 220px;
+    max-width: 250px;
   }
 
   .project-overlay {
@@ -647,7 +537,6 @@
     letter-spacing: 0.05em;
   }
 
-
   /* SLIDER ARROWS */
   .slider-controls {
     display: flex;
@@ -669,10 +558,7 @@
     flex-shrink: 0;
   }
   .slider-arrow:hover { background: var(--lime); color: var(--dark); border-color: var(--lime); transform: scale(1.08); }
-  .slider-arrow svg { width: 18px; height: 18px; }
-  .slider-dots {
-    display: flex; gap: 8px; align-items: center;
-  }
+  .slider-dots { display: flex; gap: 8px; align-items: center; }
   .slider-dot {
     width: 8px; height: 8px;
     border-radius: 50%;
@@ -681,6 +567,7 @@
     cursor: pointer;
   }
   .slider-dot.active { background: var(--lime); width: 22px; border-radius: 4px; }
+
   /* CONTACT */
   #contact {
     background: #0a0a0a;
@@ -723,7 +610,7 @@
   .citem-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gray2); font-weight: 500; }
   .citem-value { font-size: 14px; color: var(--white); font-weight: 400; }
 
-  .social-row { display: flex; gap: 10px; }
+  .social-row { display: flex; gap: 10px; flex-wrap: wrap; }
   .social-btn {
     width: 42px; height: 42px;
     background: var(--card);
@@ -756,8 +643,6 @@
   }
   .form-group input:focus,
   .form-group textarea:focus { border-color: var(--lime); }
-  .form-group input::placeholder,
-  .form-group textarea::placeholder { color: #444; }
   .form-group textarea { height: 130px; }
 
   .form-submit {
@@ -776,6 +661,7 @@
     letter-spacing: 0.04em;
     transition: transform 0.2s, box-shadow 0.2s;
     align-self: flex-start;
+    cursor: pointer;
   }
   .form-submit:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(213,255,64,0.3); }
 
@@ -816,14 +702,8 @@
     color: var(--white);
   }
   .footer-brand span { color: var(--lime); }
-  .footer-copy {
-    font-size: 12px;
-    color: var(--gray2);
-  }
-  .footer-dev {
-    font-size: 12px;
-    color: var(--gray2);
-  }
+  .footer-copy { font-size: 12px; color: var(--gray2); }
+  .footer-dev { font-size: 12px; color: var(--gray2); }
   .footer-dev a {
     color: var(--lime);
     text-decoration: none;
@@ -835,26 +715,11 @@
   .footer-dev a:hover { opacity: 0.8; text-decoration: underline; }
 
   /* REVEAL ANIMATIONS */
-  .reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
-  }
-  .reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  .reveal-left {
-    opacity: 0;
-    transform: translateX(-30px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
-  }
+  .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-left { opacity: 0; transform: translateX(-30px); transition: opacity 0.7s ease, transform 0.7s ease; }
   .reveal-left.visible { opacity: 1; transform: translateX(0); }
-  .reveal-right {
-    opacity: 0;
-    transform: translateX(30px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
-  }
+  .reveal-right { opacity: 0; transform: translateX(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
   .reveal-right.visible { opacity: 1; transform: translateX(0); }
 
   /* ARABIC RTL */
@@ -862,7 +727,7 @@
   body[dir="rtl"] .section-tag::before { display: none; }
   body[dir="rtl"] .section-tag::after {
     content: '';
-    width: 20px; height: 2px;
+    width: 16px; height: 2px;
     background: var(--lime);
     border-radius: 1px;
     order: -1;
@@ -873,45 +738,18 @@
   @media (max-width: 768px) {
     nav { gap: 16px; padding: 9px 18px; }
     nav a { font-size: 11px; }
-
-    .hero-content { grid-template-columns: 1fr; text-align: center; padding: 100px 0 80px; gap: 40px; }
-    .hero-right { display: none; }
-    .hero-desc { margin: 0 auto 32px; }
-    .hero-btns { justify-content: center; }
-    .hero-badge { font-size: 11px; }
-
-    .about-inner { grid-template-columns: 1fr; gap: 40px; }
-    .about-img-wrap { max-width: 300px; margin: 0 auto; }
-    .about-stats { gap: 12px; }
-    .astat { padding: 12px 14px; }
-
+    .hero-content { padding: 120px 0 60px; }
+    .about-stats { flex-direction: column; }
     .skills-grid { grid-template-columns: repeat(3, 1fr); }
-
-
-
     .contact-inner { grid-template-columns: 1fr; gap: 50px; }
-
-
-
-    .reveal, .reveal-left, .reveal-right {
-      opacity: 0;
-      transform: translateY(20px);
-    }
   }
 
   @media (max-width: 480px) {
     .skills-grid { grid-template-columns: repeat(2, 1fr); }
-    nav { gap: 10px; }
-    nav .lang-toggle { padding: 4px 10px; }
   }
 
   /* STAR PARTICLES */
-  .stars {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    overflow: hidden;
-  }
+  .stars { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
   .star {
     position: absolute;
     background: var(--white);
@@ -922,16 +760,6 @@
     0%, 100% { opacity: 0.15; transform: scale(1); }
     50% { opacity: 0.6; transform: scale(1.4); }
   }
-
-  /* GLITCH name effect */
-  @keyframes glitch1 {
-    0%, 95%, 100% { clip-path: none; transform: none; }
-    96% { clip-path: inset(20% 0 60% 0); transform: translateX(-4px); }
-    97% { clip-path: inset(60% 0 10% 0); transform: translateX(4px); }
-    98% { clip-path: inset(40% 0 30% 0); transform: translateX(-2px); }
-    99% { clip-path: none; transform: none; }
-  }
-  .hero-name { animation: glitch1 8s infinite; }
 </style>
 </head>
 <body>
@@ -953,49 +781,36 @@
   <div class="stars" id="stars"></div>
 
   <div class="hero-content">
-    <div class="hero-left">
-      <div class="hero-badge">
-        <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4" fill="var(--dark)"/></svg>
-        <span data-en="Available for Work" data-ar="متاح للعمل">Available for Work</span>
-      </div>
-      <h1 class="hero-name">HAMZA<span>.</span></h1>
-      <p class="hero-title" data-en="Full Stack Developer" data-ar="مطور فول ستاك">Full Stack Developer</p>
-      <p class="hero-desc" data-en="I build modern, responsive, and high-converting web applications. 4 years of experience turning ideas into powerful digital products." data-ar="أبني تطبيقات ويب حديثة وسريعة عالية الأداء. 4 سنوات من الخبرة في تحويل الأفكار إلى منتجات رقمية قوية.">I build modern, responsive, and high-converting web applications. 4 years of experience turning ideas into powerful digital products.</p>
-      <div class="hero-btns">
-        <a href="#contact" class="btn-primary">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-          <span data-en="Hire Me" data-ar="وظفني">Hire Me</span>
-        </a>
-        <a href="#projects" class="btn-secondary">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-          <span data-en="View Work" data-ar="أعمالي">View Work</span>
-        </a>
-      </div>
+    <div class="hero-badge">
+      <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4" fill="var(--dark)"/></svg>
+      <span data-en="Available for Work" data-ar="متاح للعمل">Available for Work</span>
+    </div>
+    <h1 class="hero-name">HAMZA<span>.</span></h1>
+    <p class="hero-title" data-en="Mobile & Web Developer | UI/UX Designer" data-ar="مطور تطبيقات ومواقع | مصمم واجهات وتجربة المستخدم">Mobile & Web Developer | UI/UX Designer</p>
+    <p class="hero-desc" data-en="Building responsive mobile apps, modern web applications, and intuitive UI/UX designs using Figma. Passionate about transforming clean ideas into functional digital products." data-ar="أقوم بتطوير تطبيقات الهواتف الذكية ومواقع الويب وتصميم واجهات وتجربة المستخدم (UI/UX) باستخدام فيجما. شغوف بتحويل الأفكار إلى منتجات رقمية فعالة.">Building responsive mobile apps, modern web applications, and intuitive UI/UX designs using Figma. Passionate about transforming clean ideas into functional digital products.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-primary">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        <span data-en="Hire Me" data-ar="تواصل معي">Hire Me</span>
+      </a>
+      <a href="#projects" class="btn-secondary">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+        <span data-en="View Work" data-ar="أعمالي">View Work</span>
+      </a>
     </div>
 
-    <div class="hero-right">
-      <div class="hero-img-wrap">
-        <div class="hero-img-placeholder" id="heroImgContainer">
-          <!-- hamza.png will be placed here -->
-          <div class="placeholder-inner" id="heroPlaceholder">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" style="color:var(--border)"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-            <p data-en="Profile photo coming soon" data-ar="الصورة الشخصية قريباً">Profile photo coming soon</p>
-          </div>
-        </div>
+    <div class="hero-stats">
+      <div class="stat">
+        <div class="stat-num">2+</div>
+        <div class="stat-label" data-en="Years Exp." data-ar="سنوات خبرة">Years Exp.</div>
       </div>
-      <div class="hero-stats">
-        <div class="stat">
-          <div class="stat-num">4+</div>
-          <div class="stat-label" data-en="Years" data-ar="سنوات">Years</div>
-        </div>
-        <div class="stat">
-          <div class="stat-num">15+</div>
-          <div class="stat-label" data-en="Projects" data-ar="مشروع">Projects</div>
-        </div>
-        <div class="stat">
-          <div class="stat-num">100%</div>
-          <div class="stat-label" data-en="Committed" data-ar="التزام">Committed</div>
-        </div>
+      <div class="stat">
+        <div class="stat-num">4</div>
+        <div class="stat-label" data-en="Completed Projects" data-ar="مشاريع منجزة">Completed Projects</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">3</div>
+        <div class="stat-label" data-en="In Progress" data-ar="تحت الإنشاء">In Progress</div>
       </div>
     </div>
   </div>
@@ -1008,54 +823,41 @@
 
 <!-- ABOUT -->
 <section id="about">
-  <div class="about-inner">
-    <div class="about-img-wrap reveal-left">
-      <div class="about-img-frame" id="aboutImgContainer">
-        <div class="placeholder-inner" id="aboutPlaceholder">
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" style="color:var(--border)"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-          <p data-en="Photo coming soon" data-ar="الصورة قريباً">Photo coming soon</p>
-        </div>
+  <div class="about-inner reveal">
+    <div class="section-tag" data-en="Who I Am" data-ar="من أنا">Who I Am</div>
+    <h2 class="section-title" data-en="About <span>Me</span>" data-ar="عن <span>نفسي</span>">About <span>Me</span></h2>
+    <p class="about-text" data-en="I am an independent developer and UI/UX designer based in Egypt. I specialize in building mobile & web applications and crafting clean, user-centric interfaces in Figma. Dedicated to writing clean code and delivering robust digital solutions." data-ar="أنا مطور ومصمم واجهات مستخدم مستقل من مصر. أتخصص في تطوير تطبيقات الموبايل والويب وتصميم واجهات مستخدم احترافية في فيجما. أسعى دائماً لكتابة كود نظيف وتقديم حلول برمجية متكاملة.">
+      I am an independent developer and UI/UX designer based in Egypt. I specialize in building mobile & web applications and crafting clean, user-centric interfaces in Figma. Dedicated to writing clean code and delivering robust digital solutions.
+    </p>
+    <div class="about-info">
+      <div class="info-row">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        <span data-en="Name:" data-ar="الاسم:">Name:</span>
+        <strong>Hamza Hussein</strong>
       </div>
-      <div class="about-accent"></div>
-      <div class="about-dots"></div>
+      <div class="info-row">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <span data-en="Location:" data-ar="الموقع:">Location:</span>
+        <strong data-en="Egypt" data-ar="مصر">Egypt</strong>
+      </div>
+      <div class="info-row">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <span data-en="Email:" data-ar="البريد:">Email:</span>
+        <strong>hamzahussein2990@gmail.com</strong>
+      </div>
     </div>
-
-    <div class="reveal-right">
-      <div class="section-tag" data-en="Who I Am" data-ar="من أنا">Who I Am</div>
-      <h2 class="section-title" data-en="About <span>Me</span>" data-ar="عن <span>نفسي</span>">About <span>Me</span></h2>
-      <p class="about-text" data-en="I'm a Full Stack Developer with 4 years of experience building fast, beautiful, and functional web applications. I specialize in creating complete digital experiences — from pixel-perfect frontends to solid backends — that help businesses grow and scale." data-ar="أنا مطور فول ستاك بخبرة 4 سنوات في بناء تطبيقات ويب سريعة وجميلة وعملية. متخصص في إنشاء تجارب رقمية متكاملة من واجهات أمامية احترافية إلى خلفيات متينة تساعد الشركات على النمو.">
-        I'm a Full Stack Developer with 4 years of experience building fast, beautiful, and functional web applications. I specialize in creating complete digital experiences — from pixel-perfect frontends to solid backends — that help businesses grow and scale.
-      </p>
-      <div class="about-info">
-        <div class="info-row">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-          <span data-en="Name:" data-ar="الاسم:">Name:</span>
-          <strong>Hamza Hussein</strong>
-        </div>
-        <div class="info-row">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          <span data-en="Location:" data-ar="الموقع:">Location:</span>
-          <strong data-en="Egypt" data-ar="مصر">Egypt</strong>
-        </div>
-        <div class="info-row">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          <span data-en="Email:" data-ar="البريد:">Email:</span>
-          <strong>hamzahussein2990@gmail.com</strong>
-        </div>
+    <div class="about-stats">
+      <div class="astat">
+        <div class="astat-num">2+</div>
+        <div class="astat-label" data-en="Years Experience" data-ar="سنوات الخبرة">Years Experience</div>
       </div>
-      <div class="about-stats">
-        <div class="astat">
-          <div class="astat-num">4+</div>
-          <div class="astat-label" data-en="Years Exp." data-ar="سنوات خبرة">Years Exp.</div>
-        </div>
-        <div class="astat">
-          <div class="astat-num">15+</div>
-          <div class="astat-label" data-en="Projects Done" data-ar="مشاريع">Projects Done</div>
-        </div>
-        <div class="astat">
-          <div class="astat-num">10+</div>
-          <div class="astat-label" data-en="Technologies" data-ar="تقنيات">Technologies</div>
-        </div>
+      <div class="astat">
+        <div class="astat-num">4</div>
+        <div class="astat-label" data-en="Projects Done" data-ar="مشاريع منجزة">Projects Done</div>
+      </div>
+      <div class="astat">
+        <div class="astat-num">3</div>
+        <div class="astat-label" data-en="Under Development" data-ar="تحت الإنشاء">Under Development</div>
       </div>
     </div>
   </div>
@@ -1065,13 +867,11 @@
 <section id="skills">
   <div class="skills-inner">
     <div class="skills-header reveal">
-      <div class="section-tag" style="justify-content:center;" data-en="What I Know" data-ar="ما أعرفه">What I Know</div>
+      <div class="section-tag" data-en="What I Know" data-ar="ما أعرفه">What I Know</div>
       <h2 class="section-title" data-en="My <span>Skills</span>" data-ar="<span>مهاراتي</span>">My <span>Skills</span></h2>
     </div>
 
-    <div class="skills-grid" id="skillsGrid">
-      <!-- Generated by JS -->
-    </div>
+    <div class="skills-grid" id="skillsGrid"></div>
   </div>
 </section>
 
@@ -1084,17 +884,15 @@
     </div>
 
     <div class="projects-slider-wrap">
-      <div class="projects-grid" id="projectsGrid">
-        <!-- Generated by JS -->
-      </div>
+      <div class="projects-grid" id="projectsGrid"></div>
     </div>
     <div class="slider-controls">
       <button class="slider-arrow" id="sliderPrev" aria-label="Previous">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
       </button>
       <div class="slider-dots" id="sliderDots"></div>
       <button class="slider-arrow" id="sliderNext" aria-label="Next">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
       </button>
     </div>
   </div>
@@ -1112,7 +910,7 @@
 
       <div class="contact-list">
         <a href="mailto:hamzahussein2990@gmail.com" class="citem">
-          <div class="citem-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+          <div class="citem-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
           <div class="citem-text">
             <span class="citem-label" data-en="Email" data-ar="البريد الإلكتروني">Email</span>
             <span class="citem-value">hamzahussein2990@gmail.com</span>
@@ -1125,15 +923,8 @@
             <span class="citem-value">+20 111 406 4990</span>
           </div>
         </a>
-        <a href="tel:+201114064990" class="citem">
-          <div class="citem-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.23h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.18 6.18l1.86-1.86a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
-          <div class="citem-text">
-            <span class="citem-label" data-en="Phone" data-ar="الهاتف">Phone</span>
-            <span class="citem-value">+20 111 406 4990</span>
-          </div>
-        </a>
         <div class="citem" style="cursor:default;">
-          <div class="citem-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div class="citem-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
           <div class="citem-text">
             <span class="citem-label" data-en="Location" data-ar="الموقع">Location</span>
             <span class="citem-value" data-en="Egypt" data-ar="مصر">Egypt</span>
@@ -1142,10 +933,10 @@
       </div>
 
       <div class="social-row">
-        <a href="https://instagram.com/hhamza_hussein" target="_blank" class="social-btn" title="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+        <a href="https://www.linkedin.com/in/hamza-hussein-dev" target="_blank" class="social-btn" title="LinkedIn"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
+        <a href="https://instagram.com/hhamza_hussein" target="_blank" class="social-btn" title="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
         <a href="https://tiktok.com/@hhamza_hussein" target="_blank" class="social-btn" title="TikTok"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.68a8.18 8.18 0 0 0 4.78 1.52V6.72a4.85 4.85 0 0 1-1.01-.03z"/></svg></a>
         <a href="https://wa.me/201114064990" target="_blank" class="social-btn" title="WhatsApp"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg></a>
-        <a href="mailto:hamzahussein2990@gmail.com" class="social-btn" title="Email"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
       </div>
     </div>
 
@@ -1164,11 +955,11 @@
           <textarea id="senderMessage" placeholder="Tell me about your project..."></textarea>
         </div>
         <div class="form-success" id="formSuccess">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
           <span data-en="Message sent successfully! I'll get back to you soon." data-ar="تم إرسال رسالتك بنجاح! سأرد عليك قريباً.">Message sent successfully! I'll get back to you soon.</span>
         </div>
-        <button class="form-submit" id="sendBtn">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        <button class="form-submit" id="sendBtn" type="button">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
           <span data-en="Send Message" data-ar="إرسال">Send Message</span>
         </button>
       </div>
@@ -1180,7 +971,7 @@
 <footer>
   <div class="footer-inner">
     <div class="footer-brand">HAMZA<span>.</span></div>
-    <div class="footer-copy" id="footerCopy">© 2025 Hamza Hussein. All rights reserved.</div>
+    <div class="footer-copy" id="footerCopy">© 2026 Hamza Hussein. All rights reserved.</div>
     <div class="footer-dev">
       Development by <a href="https://instagram.com/hhamza_hussein" target="_blank">HAMZA</a>
     </div>
@@ -1188,11 +979,9 @@
 </footer>
 
 <script>
-// ─── CURSOR REMOVED ─
-
 // ─── STARS ────────────────────────────────────────────
 const starsContainer = document.getElementById('stars');
-for (let i = 0; i < 60; i++) {
+for (let i = 0; i < 50; i++) {
   const s = document.createElement('div');
   const size = Math.random() * 2.5 + 0.5;
   s.className = 'star';
@@ -1202,57 +991,61 @@ for (let i = 0; i < 60; i++) {
 
 // ─── SKILLS DATA ──────────────────────────────────────
 const skills = [
-  { svg: `<svg viewBox="0 0 24 24" fill="#E34F26"><path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.565-2.438L1.5 0zm7.031 9.75l-.232-2.718 10.059.003.23-2.622L5.412 4.41l.698 8.01h9.126l-.326 3.426-2.91.804-2.955-.81-.188-2.11H6.248l.33 4.171L12 19.351l5.379-1.443.744-8.157H8.531z"/></svg>`, name: 'HTML', pct: 98 },
-  { svg: `<svg viewBox="0 0 24 24" fill="#1572B6"><path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.564-2.438L1.5 0zm17.09 4.413L5.41 4.41l.213 2.622 10.125.002-.255 2.716h-6.64l.24 2.573h6.182l-.366 3.523-2.91.804-2.956-.81-.188-2.11h-2.61l.29 3.855L12 19.288l5.373-1.53L18.59 4.413z"/></svg>`, name: 'CSS', pct: 95 },
-  { svg: `<svg viewBox="0 0 24 24" fill="#F7DF1E"><path d="M0 0h24v24H0V0zm22.034 18.276c-.175-1.095-.888-2.015-3.003-2.873-.736-.345-1.554-.585-1.797-1.14-.091-.33-.105-.51-.046-.705.15-.646.915-.84 1.515-.66.39.12.75.42.976.9 1.034-.676 1.034-.676 1.755-1.125-.27-.42-.404-.601-.586-.78-.63-.705-1.469-1.065-2.834-1.034l-.705.089c-.676.165-1.32.525-1.71 1.005-1.14 1.291-.811 3.541.569 4.471 1.365 1.02 3.361 1.244 3.616 2.205.24 1.17-.87 1.545-1.966 1.41-.811-.18-1.26-.586-1.755-1.336l-1.83 1.051c.21.48.45.689.81 1.109 1.74 1.756 6.09 1.666 6.871-1.004.029-.09.24-.705.074-1.65l.046.067zm-8.983-7.245h-2.248c0 1.938-.009 3.864-.009 5.805 0 1.232.063 2.363-.138 2.711-.33.689-1.18.601-1.566.48-.396-.196-.597-.466-.83-.855-.063-.105-.11-.196-.127-.196l-1.825 1.125c.305.63.75 1.172 1.324 1.517.855.51 2.004.675 3.207.405.783-.226 1.458-.691 1.811-1.411.51-.93.402-2.07.397-3.346.012-2.054 0-4.109 0-6.179l.004-.056z"/></svg>`, name: 'JavaScript', pct: 92 },
-  { svg: `<svg viewBox="0 0 24 24" fill="#61DAFB"><path d="M14.448 13.226C14.205 13.42 13.943 13.593 13.665 13.74c-.282.148-.578.273-.884.374-.308.1-.626.175-.951.221-.326.046-.659.069-.999.069-.34 0-.673-.023-.999-.069-.325-.046-.643-.121-.951-.221-.306-.101-.602-.226-.884-.374-.278-.147-.54-.32-.783-.514L12 10.842l2.448 2.384zM12 0C8.75 0 5.967 1.356 4.016 3.524L7.07 6.577A8.46 8.46 0 0 1 12 4.8a8.461 8.461 0 0 1 4.929 1.777l3.055-3.053A11.951 11.951 0 0 0 12 0zM0 12c0 3.25 1.356 6.033 3.524 7.984l3.053-3.054A8.46 8.46 0 0 1 4.8 12a8.46 8.46 0 0 1 1.777-4.929L3.524 4.016A11.951 11.951 0 0 0 0 12zm24 0a11.951 11.951 0 0 0-3.524-7.984l-3.053 3.055A8.46 8.46 0 0 1 19.2 12a8.46 8.46 0 0 1-1.777 4.929l3.053 3.055A11.951 11.951 0 0 0 24 12zM4.016 20.476A11.951 11.951 0 0 0 12 24a11.951 11.951 0 0 0 7.984-3.524l-3.053-3.055A8.46 8.46 0 0 1 12 19.2a8.46 8.46 0 0 1-4.929-1.777l-3.055 3.053z"/></svg>`, name: 'React', pct: 90 },
-  { svg: `<svg viewBox="0 0 24 24" fill="#339933"><path d="M11.998 24c-.321 0-.641-.084-.922-.247l-2.936-1.737c-.438-.245-.224-.332-.08-.383.585-.203.703-.25 1.328-.604.066-.037.151-.023.218.017l2.256 1.339c.082.045.198.045.272 0l8.795-5.076c.082-.047.134-.141.134-.238V6.921c0-.099-.053-.192-.137-.242l-8.791-5.072c-.082-.047-.19-.047-.271 0L3.075 6.68c-.084.05-.139.146-.139.244v10.148c0 .097.055.189.137.236l2.408 1.392c1.307.654 2.108-.116 2.108-.891V7.parte.171c0-.143.114-.253.256-.253h1.115c.139 0 .255.11.255.253V18.29c0 1.745-.951 2.745-2.604 2.745-.508 0-.909 0-2.026-.551l-2.304-1.328C.784 18.836 0 17.664 0 16.395V6.247C0 4.974.784 3.8 2.053 3.075l8.796-5.08c1.239-.703 2.887-.703 4.118 0l8.795 5.08c1.268.725 2.051 1.899 2.051 3.172v10.148c0 1.272-.783 2.446-2.051 3.167l-8.795 5.079c-.28.163-.601.247-.969.247z"/></svg>`, name: 'Node.js', pct: 85 },
-  { svg: `<svg viewBox="0 0 24 24" fill="#47A248"><path d="M17.193 9.555c-1.264-5.58-4.252-7.414-4.573-8.115-.28-.394-.53-.954-.735-1.44-.036.495-.055.685-.523 1.184-.723.566-4.438 3.682-4.74 10.02-.282 5.912 4.27 9.435 4.888 9.884l.07.05A73.49 73.49 0 0 1 11.91 24h.481c.114-1.032.284-2.056.51-3.07.417-.296.604-.463.85-.693a11.342 11.342 0 0 0 3.639-8.464c.01-.814-.103-1.662-.197-2.218zm-5.336 8.195s0-8.291.275-8.29c.213 0 .49 10.695.49 10.695-.381-.045-.765-1.76-.765-2.405z"/></svg>`, name: 'MongoDB', pct: 80 },
-  { svg: `<svg viewBox="0 0 24 24" fill="#7952B3"><path d="M11.77 11.24H9.956V8.202h2.152c1.17 0 1.834.522 1.834 1.466 0 1.008-.773 1.572-2.174 1.572zm.324 1.206H9.956v3.348h2.231c1.459 0 2.232-.585 2.232-1.685s-.795-1.663-2.326-1.663zM24 11.39v1.218c-1.128.108-1.817.944-2.226 2.268-.407 1.319-.463 2.937-.42 4.186.045 1.3-.968 2.5-2.337 2.5H4.985c-1.37 0-2.382-1.2-2.337-2.5.043-1.249-.013-2.867-.42-4.186-.41-1.324-1.1-2.16-2.228-2.268V11.39c1.128-.108 1.819-.944 2.227-2.268.408-1.319.464-2.937.42-4.186-.045-1.3.968-2.5 2.338-2.5H19.017c1.37 0 2.382 1.2 2.337 2.5-.043 1.249.013 2.867.42 4.186.409 1.324 1.098 2.16 2.226 2.268zm-7.927 2.817c0-1.354-.953-2.333-2.368-2.488v-.057c1.04-.195 1.897-1.112 1.897-2.275 0-1.649-1.246-2.742-3.334-2.742H8.509v10.99h3.892c2.28 0 3.672-1.155 3.672-3.428z"/></svg>`, name: 'Bootstrap', pct: 93 },
-  { svg: `<svg viewBox="0 0 24 24" fill="#F05032"><path d="M23.546 10.93L13.067.452c-.604-.603-1.582-.603-2.188 0L8.708 2.627l2.76 2.76c.645-.215 1.379-.07 1.889.441.516.515.658 1.258.438 1.9l2.658 2.66c.645-.223 1.387-.078 1.9.435.721.72.721 1.884 0 2.604-.719.719-1.881.719-2.6 0-.539-.541-.674-1.337-.404-1.996L12.86 8.955v6.525c.176.086.342.203.488.348.713.721.713 1.883 0 2.6-.719.721-1.889.721-2.609 0-.719-.719-.719-1.879 0-2.598.182-.18.387-.316.605-.406V8.835c-.217-.091-.424-.222-.6-.401-.545-.545-.676-1.342-.396-2.009L7.636 3.7.45 10.881c-.6.605-.6 1.584 0 2.189l10.48 10.477c.604.604 1.582.604 2.186 0l10.43-10.43c.605-.603.605-1.582 0-2.187"/></svg>`, name: 'Git', pct: 88 },
-  { svg: `<svg viewBox="0 0 24 24" fill="#FFCA28"><path d="M3.89 15.672L6.255.461A.542.542 0 0 1 7.27.288l2.543 4.771zm16.794 3.692l-2.25-14a.54.54 0 0 0-.919-.295L3.316 19.365l7.856 4.427a1.621 1.621 0 0 0 1.588 0zM14.3 9.715l-2.0-3.769a.54.54 0 0 0-.96 0L3.53 17.985z"/></svg>`, name: 'Firebase', pct: 82 },
-  { svg: `<svg viewBox="0 0 24 24" fill="#646CFF"><path d="M8.286 10.578l.196-3.541 5.953 6.376-3.373 3.483-2.776-6.318zm-1.065-4.845l9.93-4.49a.857.857 0 0 1 1.168.94l-2.068 12.413a.857.857 0 0 1-1.409.524L8.232 10.5l-1.011 4.505-2.053-2.19 2.053-6.082zM7.14 18.182l1.2-5.333 1.618 1.727-2.818 3.606z"/></svg>`, name: 'Vite', pct: 88 },
+  { svg: `<svg viewBox="0 0 24 24" width="36" height="36" fill="#E34F26"><path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.565-2.438L1.5 0zm7.031 9.75l-.232-2.718 10.059.003.23-2.622L5.412 4.41l.698 8.01h9.126l-.326 3.426-2.91.804-2.955-.81-.188-2.11H6.248l.33 4.171L12 19.351l5.379-1.443.744-8.157H8.531z"/></svg>`, name: 'HTML', pct: 95 },
+  { svg: `<svg viewBox="0 0 24 24" width="36" height="36" fill="#1572B6"><path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.564-2.438L1.5 0zm17.09 4.413L5.41 4.41l.213 2.622 10.125.002-.255 2.716h-6.64l.24 2.573h6.182l-.366 3.523-2.91.804-2.956-.81-.188-2.11h-2.61l.29 3.855L12 19.288l5.373-1.53L18.59 4.413z"/></svg>`, name: 'CSS', pct: 90 },
+  { svg: `<svg viewBox="0 0 24 24" width="36" height="36" fill="#F7DF1E"><path d="M0 0h24v24H0V0zm22.034 18.276c-.175-1.095-.888-2.015-3.003-2.873-.736-.345-1.554-.585-1.797-1.14-.091-.33-.105-.51-.046-.705.15-.646.915-.84 1.515-.66.39.12.75.42.976.9 1.034-.676 1.034-.676 1.755-1.125-.27-.42-.404-.601-.586-.78-.63-.705-1.469-1.065-2.834-1.034l-.705.089c-.676.165-1.32.525-1.71 1.005-1.14 1.291-.811 3.541.569 4.471 1.365 1.02 3.361 1.244 3.616 2.205.24 1.17-.87 1.545-1.966 1.41-.811-.18-1.26-.586-1.755-1.336l-1.83 1.051c.21.48.45.689.81 1.109 1.74 1.756 6.09 1.666 6.871-1.004.029-.09.24-.705.074-1.65l.046.067z"/></svg>`, name: 'JavaScript', pct: 88 },
+  { svg: `<svg viewBox="0 0 24 24" width="36" height="36" fill="#F24E1E"><path d="M6 24c3.314 0 6-2.686 6-6v-6H6c-3.314 0-6 2.686-6 6s2.686 6 6 6zM0 12c0-3.314 2.686-6 6-6h6v12H6c-3.314 0-6-2.686-6-6zm6-12h6v12H6C2.686 12 0 9.314 0 6s2.686-6 6-6zm12 0h-6v12h6c3.314 0 6-2.686 6-6s-2.686-6-6-6zm0 18c3.314 0 6 2.686 6 6s-2.686 6-6 6h-6v-6h6z"/></svg>`, name: 'Figma', pct: 92 },
+  { svg: `<svg viewBox="0 0 24 24" width="36" height="36" fill="#646CFF"><path d="M8.286 10.578l.196-3.541 5.953 6.376-3.373 3.483-2.776-6.318zm-1.065-4.845l9.93-4.49a.857.857 0 0 1 1.168.94l-2.068 12.413a.857.857 0 0 1-1.409.524L8.232 10.5l-1.011 4.505-2.053-2.19 2.053-6.082zM7.14 18.182l1.2-5.333 1.618 1.727-2.818 3.606z"/></svg>`, name: 'React', pct: 85 },
+  { svg: `<svg viewBox="0 0 24 24" width="36" height="36" fill="#F05032"><path d="M23.546 10.93L13.067.452c-.604-.603-1.582-.603-2.188 0L8.708 2.627l2.76 2.76c.645-.215 1.379-.07 1.889.441.516.515.658 1.258.438 1.9l2.658 2.66c.645-.223 1.387-.078 1.9.435.721.72.721 1.884 0 2.604-.719.719-1.881.719-2.6 0-.539-.541-.674-1.337-.404-1.996L12.86 8.955v6.525c.176.086.342.203.488.348.713.721.713 1.883 0 2.6-.719.721-1.889.721-2.609 0-.719-.719-.719-1.879 0-2.598.182-.18.387-.316.605-.406V8.835c-.217-.091-.424-.222-.6-.401-.545-.545-.676-1.342-.396-2.009L7.636 3.7.45 10.881c-.6.605-.6 1.584 0 2.189l10.48 10.477c.604.604 1.582.604 2.186 0l10.43-10.43c.605-.603.605-1.582 0-2.187"/></svg>`, name: 'Git', pct: 88 }
 ];
 
-const grid = document.getElementById('skillsGrid');
+const skillsGrid = document.getElementById('skillsGrid');
 skills.forEach((sk, i) => {
   const card = document.createElement('div');
   card.className = 'skill-card reveal';
   card.style.transitionDelay = (i * 0.07) + 's';
-  const svgEl = sk.svg.replace('<svg ', `<svg width="38" height="38" style="display:block;margin:0 auto 10px" `);
   card.innerHTML = `
-    ${svgEl}
+    <div style="display:flex;justify-content:center;margin-bottom:8px;">${sk.svg}</div>
     <div class="skill-name">${sk.name}</div>
     <div class="skill-bar"><div class="skill-fill" data-pct="${sk.pct}"></div></div>
   `;
-  grid.appendChild(card);
+  skillsGrid.appendChild(card);
 });
 
-// ─── PROJECTS DATA ────────────────────────────────────
-const currentLang = () => document.documentElement.lang || 'en';
-
+// ─── PROJECTS DATA (4 Projects: 2 Done, 2 In Progress) ───
 const projectsData = [
   {
     img: 'project1.png',
     nameEn: 'Project One', nameAr: 'المشروع الأول',
-    descEn: 'A game top-up application built with the latest features to provide a distinctive and fast customer experience.', descAr: 'تطبيق شحن العاب مبنى بأحدث الإمكانيات ليقدم تجربة مميزة و سريعة للعميل .',
+    descEn: 'A game top-up application built with modern features to provide a fast and secure user experience.', descAr: 'تطبيق شحن ألعاب مبنى بأحدث الإمكانيات ليقدم تجربة سريعة وآمنة للمستخدم.',
     link: '#',
-    tags: ['App', 'Frontend', 'Backend']
+    tags: ['App', 'Frontend', 'Backend'],
+    inProgress: false
   },
   {
     img: 'project2.png',
     nameEn: 'Project Two', nameAr: 'المشروع الثاني',
-    descEn: 'A fast and simple learning platform that offers a seamless user experience.', descAr: 'منصة تعليمية سريعة و بسيطة تقدم تجربة مستخدم سلسة.',
+    descEn: 'A fast and clean learning platform offering a seamless responsive user experience.', descAr: 'منصة تعليمية سريعة ونظيفة تقدم تجربة مستخدم سلسة ومتجاوبة.',
     link: 'https://mradelrahman.github.io/E/',
-    tags: ['Wep', 'Frontend', 'Backend']
+    tags: ['Web', 'Frontend', 'UI/UX'],
+    inProgress: false
   },
   {
     img: 'project3.png',
-    nameEn: 'Project Three', nameAr: 'المشروع الثالث',
-    descEn: 'It will be added soon.', descAr: 'هيتضاف قريب.',
+    nameEn: 'Refqa App (رفقة)', nameAr: 'تطبيق رِفْقة',
+    descEn: 'A mobile application currently under development, focusing on community connection and support.', descAr: 'تطبيق موبايل قيد التطوير حالياً، يركز على الترابط المجتمعي والدعم المتبادل.',
     link: '#',
-    tags: ['almost', 'almost', 'almost']
+    tags: ['Mobile App', 'Figma', 'Under Construction'],
+    inProgress: true
   },
+  {
+    img: 'project4.png',
+    nameEn: 'Craft Platform', nameAr: 'منصة Craft',
+    descEn: 'A SaaS e-commerce infrastructure concept and platform built for merchants, currently in progress.', descAr: 'منصة وبنية تحتية للتجارة الإلكترونية موجهة للتجار، قيد الإنشاء حالياً.',
+    link: '#',
+    tags: ['Web Platform', 'UI/UX', 'Under Construction'],
+    inProgress: true
+  }
 ];
 
 let sliderIdx = 0;
@@ -1268,17 +1061,25 @@ function renderProjects(lang) {
     card.className = 'project-card';
     const name = lang === 'ar' ? p.nameAr : p.nameEn;
     const desc = lang === 'ar' ? p.descAr : p.descEn;
-    const emptyTitle = lang === 'ar' ? 'لم يُضَف بعد' : 'Nothing has been put in place yet';
-    const emptyDesc = lang === 'ar' ? 'مشروع احترافي سيتم عرضه قريباً' : 'A professional project will be showcased here soon';
+    const devTitle = lang === 'ar' ? 'تحت الإنشاء' : 'In Development';
+    const devSub = lang === 'ar' ? 'جاري العمل على تطويره قريباً' : 'Currently being built & polished';
     const previewTxt = lang === 'ar' ? 'معاينة مباشرة' : 'Live Preview';
     const tags = p.tags.map(t => `<span class="ptag">${t}</span>`).join('');
+
     card.innerHTML = `
       <div class="project-img" id="projImg${i}">
-        <div class="project-empty">
-          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--border)"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
-          <div class="empty-title">${emptyTitle}</div>
-          <div class="empty-sub">${emptyDesc}</div>
-        </div>
+        ${p.inProgress ? `
+          <div class="project-empty">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--lime)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+            <div class="empty-title">${devTitle}</div>
+            <div class="empty-sub">${devSub}</div>
+          </div>
+        ` : `
+          <div class="project-empty" id="empty${i}">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="color:var(--border)"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            <div class="empty-title">${lang === 'ar' ? 'معاينة المشروع' : 'Project Preview'}</div>
+          </div>
+        `}
         <div class="project-overlay">
           <a href="${p.link}" target="_blank">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
@@ -1293,7 +1094,9 @@ function renderProjects(lang) {
       </div>
     `;
     pgrid.appendChild(card);
-    tryLoadProjectImg(p.img, i);
+    if (!p.inProgress) {
+      tryLoadProjectImg(p.img, i);
+    }
 
     if (dotsContainer) {
       const dot = document.createElement('div');
@@ -1322,63 +1125,22 @@ document.addEventListener('click', function(e) {
   if (e.target.closest('#sliderPrev')) goToSlide(sliderIdx - 1);
 });
 
-// touch swipe support
-let touchStartX = 0;
-document.addEventListener('touchstart', function(e) { touchStartX = e.touches[0].clientX; }, { passive: true });
-document.addEventListener('touchend', function(e) {
-  const diff = touchStartX - e.changedTouches[0].clientX;
-  if (Math.abs(diff) > 50) goToSlide(diff > 0 ? sliderIdx + 1 : sliderIdx - 1);
-}, { passive: true });
-
-
-
 function tryLoadProjectImg(filename, idx) {
   const img = new Image();
   img.onload = () => {
     const container = document.getElementById('projImg' + idx);
     if (!container) return;
-    container.querySelector('.project-empty').style.display = 'none';
+    const empty = container.querySelector('.project-empty');
+    if (empty) empty.style.display = 'none';
     const imgEl = document.createElement('img');
     imgEl.src = filename;
     imgEl.alt = 'Project preview';
     container.insertBefore(imgEl, container.firstChild);
   };
-  img.onerror = () => {};
   img.src = filename;
 }
 
-// ─── HERO IMAGE ───────────────────────────────────────
-(function() {
-  const img = new Image();
-  img.onload = () => {
-    const ph = document.getElementById('heroPlaceholder');
-    if (ph) ph.style.display = 'none';
-    const imgEl = document.createElement('img');
-    imgEl.src = 'hamza.png';
-    imgEl.alt = 'Hamza Hussein';
-    document.getElementById('heroImgContainer').insertBefore(imgEl, document.getElementById('heroPlaceholder'));
-  };
-  img.onerror = () => {};
-  img.src = 'hamza.png';
-})();
-
-// About image
-(function() {
-  const img = new Image();
-  img.onload = () => {
-    const ph = document.getElementById('aboutPlaceholder');
-    const container = document.getElementById('aboutImgContainer');
-    if (ph) ph.style.display = 'none';
-    const imgEl = document.createElement('img');
-    imgEl.src = 'hamza.png';
-    imgEl.alt = 'Hamza Hussein';
-    container.insertBefore(imgEl, ph);
-  };
-  img.onerror = () => {};
-  img.src = 'hamza.png';
-})();
-
-// ─── LANGUAGE ─────────────────────────────────────────
+// ─── LANGUAGE TOGGLE ──────────────────────────────────
 let lang = 'en';
 const btn = document.getElementById('langToggle');
 
@@ -1397,7 +1159,6 @@ function setLang(l) {
     }
   });
 
-  // Update placeholders
   document.querySelectorAll('input[placeholder], textarea[placeholder]').forEach(el => {
     if (isAr) {
       if (el.id === 'senderName') el.placeholder = 'حمزة حسين';
@@ -1411,7 +1172,7 @@ function setLang(l) {
   });
 
   renderProjects(l);
-  document.getElementById('footerCopy').textContent = isAr ? '© 2025 حمزة حسين. جميع الحقوق محفوظة.' : '© 2025 Hamza Hussein. All rights reserved.';
+  document.getElementById('footerCopy').textContent = isAr ? '© 2026 حمزة حسين. جميع الحقوق محفوظة.' : '© 2026 Hamza Hussein. All rights reserved.';
 }
 
 btn.addEventListener('click', () => setLang(lang === 'en' ? 'ar' : 'en'));
@@ -1454,7 +1215,6 @@ function observeReveal() {
     entries.forEach(e => {
       if (e.isIntersecting) {
         e.target.classList.add('visible');
-        // Animate skill bars
         e.target.querySelectorAll('.skill-fill').forEach(bar => {
           bar.style.width = bar.dataset.pct + '%';
         });
@@ -1470,4 +1230,4 @@ renderProjects('en');
 observeReveal();
 </script>
 </body>
-    </html>
+</html>
